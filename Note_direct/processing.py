@@ -12,13 +12,6 @@ def last_id(data):
         return max(id_list) + 1
     else:
         return 1
-# def delete_note(all_notes, id):
-#     inx = None
-#     for i in range(len(all_notes)):
-#         if all_notes[i]['id'] == id:
-#             inx = i
-#             break
-#     del all_notes[inx]
 
 def what_note_id(what_find, data):
     idnex = 0
@@ -54,16 +47,16 @@ def main_logic():
         elif pos == 3:
             id_what = controller.find_note()
             target = what_note_id(id_what, notes)
-            # print(target)
-            view.print_all_contacts(target)
+            print(target)
+            # view.print_all_notes(target)
         elif pos == 4:
-            what_find = datetime.strptime(input("Введите дату  в формате 00-00-0000: "), "%d-%m-%Y").date()
+            what_find = datetime.strptime(input("Введите дату день-месяц-год в формате 00-00-0000: "), "%d-%m-%Y").date()
             target = what_data(what_find, notes)
             print(target)
         elif pos == 5:
             controller.delete_note(notes, int(input("Введите id: ")))
         elif pos == 6:
-            view.print_all_contacts(notes)
+            view.print_all_notes(notes)
         elif pos ==7:
             running = False
             write.save_data(notes)

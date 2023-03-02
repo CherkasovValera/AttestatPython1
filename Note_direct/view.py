@@ -7,18 +7,13 @@ def user_command():
         return number
     else:
         print(int(input("Некорректный ввод! Введите число от 1 до 7  ")))
-    # com_list = ['create', 'update', 'delete', 'find', 'list', 'exit']
-    # print('Command list:')
-    # for i, com in enumerate(com_list, start=1):
-    #     print(f'{i}. {com}')
 from tabulate import tabulate  ## Таблица для вывода всех контактов
-def print_all_contacts(notes):
+def print_all_notes(notes):
     data_to_print = []
     for i in range(len(notes)):
         listik = list(notes[i].values())
         listik.pop(0)
         data_to_print.append(listik)
 
-    col_names = ["Заголовок", "Текст", "Дата"]
-    # print(data_to_print)
-    print(tabulate(data_to_print, headers=col_names, tablefmt="fancy_grid", showindex="never"))
+    col_names = ["id", "Заголовок", "Текст", "Дата"]
+    print(tabulate(data_to_print, headers=col_names, tablefmt='double_grid', showindex="always"))

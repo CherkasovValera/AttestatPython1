@@ -1,14 +1,8 @@
 from datetime import datetime
-import view
-import processing
-import write
+
 def find_note():
     find_me = int(input("Введите id заметки: "))
     return find_me
-# # Найти сотрудника
-# def find_what_empl(what_find): #только одно слово - фамилия
-#     return [i for i in what_find if i['id'] == what_find]
-# print(len(find_what_empl('')))
 def create_note():
     new_note = {'id':''}
     new_note['title'] = input('Введите заголовок: ')
